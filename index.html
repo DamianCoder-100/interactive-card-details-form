@@ -1,51 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link rel="stylesheet" href="interactive-card.css">
+
   <title>Frontend Mentor | Interactive card details form</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
+
 <body>
+  <div class="test">
 
-  0000 0000 0000 0000
-  Jane Appleseed
-  00/00
+    <main>
+      <!-- DONE -->
+      <div class="card-back">
+        <p id="cvc-output">000</p>
+      </div>
+    <div class="card-front">
+      <img class="logo" src="images/card-logo.svg" alt="logo">
+      <h1 class="numbers" id="numbers">0000 0000 0000 0000</h1>
+      <div class="card-title">
+        <p class="card-name" id="card-name">Jane Appleseed</p>
+        <div><span class="month" id="output-month">00</span>/<span class="year" id="output-year">00</span></div>
+      </div>
+    </div>
+    <img class="header-img" src="images\bg-main-mobile.png" alt="">
 
-  000
-
-  Cardholder Name
-  e.g. Jane Appleseed
-
-  Card Number
-  e.g. 1234 5678 9123 0000
-
-  Exp. Date (MM/YY)
-  MM
-  YY
-
-  CVC
-  e.g. 123
-
-  Confirm
-
-  <!-- Completed state start -->
-
-  Thank you!
-  We've added your card details
-  Continue
+    <form class="form-section" id="form-section">
+      <!-- DONE -->
+      <div class="upper-form">
+        <div class="flex-container">
+          <label class="top-label" for="">Cardholder Name</label>
+          <input class="input-card-name" type="text" id="input-card-name" maxlength="21" placeholder="e.g. Jane Appleseed">
+          <p class="error-message" id="name-err"></p>
+        </div>
+        <div class="flex-container">
+          <label class="top-label" for="-input-card-num">Card Number</label>
+          <input class="input-card-num" type="text" id="input-card-num" placeholder="e.g. 1234 5678 9123 0000" maxlength="19">
+          <p class="error-message" id="num-err"></p>
+        </div>
+      </div>
+      <!-- DONE -->
+      <div class="lower-form">
+        <div class="ex-date">
+          <label class="bottom-label" for="month">Exp. Date</label>
+          <input class="ex-date-input" type="text" inputmode="numeric" maxlength="2" id="month" placeholder="MM">
+          <p class="error-message" id="month-err"></p>
+        </div>
+        <div class="date">
+          <label class="bottom-label" for="year">(MM/YY)</label>
+          <input class="date-input" type="text" id="year" placeholder="YY">
+          <p class="error-message" id="year-err"></p>
+        </div>
+        <div class="cc">
+          <label class="bottom-label" for="cvc">CVC</label>
+          <input class="cvc-input" type="text" inputmode="numeric" min="0" max="999" id="cvc-input" maxlength="3" placeholder="e.g. 123">
+          <p class="error-message" id="cvc-err"></p>
+        </div>
+      </div>
+      <button class="confirm-btn" id="confirm-btn" type="submit">Confirm</button>
+    </form>
+    
+    <div class="complete hidden" id="complete-section">
+      <img class="check" src="images/icon-complete.svg" alt="check-mark">
+      <h1>Thank you!</h1>
+      <p>We've added your card details</p>
+      <button type="button" class="continue-btn" id="continue-btn">Continue</button>
+    </div>
+  </main>
   
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+  <script src="interactive-card.js"></script>
+  
+</div>
 </body>
+
 </html>
+<!-- <div class="attribution">
+  Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+  Coded by <a href="#">Your Name Here</a>.
+</div> -->

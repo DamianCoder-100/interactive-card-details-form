@@ -1,0 +1,259 @@
+* {
+    /* outline: 1px solid red; */
+
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: 'Space Grotesk';
+    box-sizing: border-box;
+
+}
+
+.test {
+    /* background-color: rgb(49, 37, 37); */
+}
+
+main {
+    margin: 0 auto;
+    max-width: 375px;
+    min-height: 100vh;
+    position: relative;
+    background-color: white;
+}
+
+.header-img {
+    width: 375px;
+    height: 300px;
+    margin-bottom: 100px;
+    position: absolute;
+    top: -25px;
+}
+
+.card-front {
+    background-image: url(images/bg-card-front.png);
+    position: relative;
+    top: 50px;
+    left: 25px;
+    border-radius: 10px;
+    width: 270px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    z-index: 3;
+}
+
+.logo {
+    width: 50px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.card-title {
+    position: absolute;
+    top: 100px;
+    width: 270px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: baseline;
+    color: hsl(0, 0%, 100%);
+
+}
+
+.numbers {
+    position: absolute;
+    top: 60px;
+    font-size: 20px;
+    color: hsl(0, 0%, 100%);
+}
+
+.card-back {
+    background-image: url(images/bg-card-back.png);
+    position: relative;
+    top: 114px;
+    left: 90px;
+    height: 150px;
+    width: 270px;
+    border-radius: 10px;
+    z-index: 2;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+
+}
+
+.card-back p {
+    color: hsl(0, 0%, 100%);
+    position: absolute;
+    top: 50px;
+    left: 200px;
+}
+
+form {
+    position: absolute;
+    top: 400px;
+    left: 50%;
+    height: 600px;
+    transform: translateX(-50%);
+    margin: 0 auto;
+
+}
+
+.error-message {
+    /* visibility: hidden; */
+    color: hsl(0, 100%, 50%);
+    font-size: 15px;
+}
+
+.error-message.show {
+    visibility: visible;
+}
+
+.input-error {
+    border: 1px solid hsl(0, 100%, 50%);
+}
+
+.top-label {
+    display: block;
+    margin-bottom: 20px;
+    color: hsl(278, 68%, 11%);
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.bottom-label {
+    display: block;
+    margin-bottom: 20px;
+    color: hsl(278, 68%, 11%);
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.input-card-num {
+    width: 350px;
+    height: 50px;
+    border-radius: 10px;
+    font-size: 20px;
+    padding-left: 15px;
+    border: 2px solid hsl(212, 12%, 71%)
+}
+
+.input-card-name {
+    width: 350px;
+    height: 50px;
+    border-radius: 10px;
+    font-size: 20px;
+    padding-left: 15px;
+    border: 2px solid hsl(212, 12%, 71%)
+}
+
+.ex-date-input {
+    width: 70px;
+    height: 50px;
+    border-radius: 10px;
+    padding-left: 15px;
+    font-size: 20px;
+    border: 2px solid hsl(212, 12%, 71%)
+}
+
+.date-input {
+    width: 70px;
+    height: 50px;
+    border-radius: 10px;
+    padding-left: 15px;
+    font-size: 20px;
+    border: 2px solid hsl(212, 12%, 71%)
+}
+
+.cvc-input {
+    width: 120px;
+    height: 50px;
+    border-radius: 10px;
+    padding-left: 15px;
+    font-size: 20px;
+    border: 2px solid hsl(212, 12%, 71%)
+}
+
+#cvc-output {
+    font-size: 15px;
+}
+
+.card-name {
+    font-size: 16px;
+}
+
+.month.year {
+    font-size: 14px;
+}
+
+.upper-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.lower-form {
+    display: flex;
+    justify-content: space-between;
+}
+
+.flex {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.confirm-btn {
+    width: 360px;
+    height: 60px;
+    margin-top: 20px;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: hsl(0, 100%, 100%);
+    background-color: hsl(278, 68%, 11%);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.continue-btn {
+    width: 360px;
+    height: 60px;
+    margin-top: 20px;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: hsl(0, 100%, 100%);
+    background-color: hsl(278, 68%, 11%);
+}
+
+.complete p {
+    color: hsl(212, 12%, 71%);
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.complete {
+    position: absolute;
+    top: 450px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+}
+
+.hidden {
+    display: none;
+}
