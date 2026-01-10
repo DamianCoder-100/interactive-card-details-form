@@ -55,8 +55,7 @@ formSection.addEventListener('submit', handleSubmit);
 // DEFAULT NAME
 const DEFAULT_NAME = 'Jane Appleseed';
 const DEFAULT_NUMBER = '0000 0000 0000 0000';
-const DEFAULT_MESSAGE_THREE = `Can't be blank`;
-const DEFAULT_MESSAGE_TWO = 'Wrong format, numbers only';
+
 
 // NAME FUNCTION
 // While typing — clean input
@@ -93,14 +92,12 @@ function handleNumber() {
 function handleNumberFinalize() {
   let rawValue = inputNumber.value.replace(/\D/g, '');  // digits only
   let formattedValue = rawValue.replace(/(\d{4})/g, '$1 ').trim(); // add spaces
-
   inputNumber.value = formattedValue;
   numberDisplay.textContent = formattedValue || DEFAULT_NUMBER;
-
   if (rawValue.length !== 16) {
     numErr.textContent = 'Card number must be 16 digits';
   } else {
-    numErr.textContent = '';
+    numErr.style.visibility = "visible";
   }
 }
 
@@ -150,6 +147,7 @@ function handleYear() {
 }
 
 
+
 // CVC FUNCTION
 function handleCvc() {
   let value = inputCvc.value.replace(/\D/g, '');
@@ -174,26 +172,30 @@ function validateForm() {
 function validateName() {
   const nameValue = inputName.value.trim();
   if (nameValue === "") {
-    nameErr.textContent = "Can't be blank";
+    nameErr.style.visibility = "visible";
+    inputName.style.border = "1px solid red";
     return false;
-  } 
-    nameErr.textContent = "";
-    return true
   }
+  nameErr.style.visibility = "hidden";
+  inputName.style.border = "2px solid hsla(212, 12%, 71%)";
+  return true
+}
 
 
 // VALIDATE NUMBER
 function validateNumber() {
   const numberValue = inputNumber.value.replace(/\D/g, '');
   if (!numberValue) {
-    numErr.textContent = DEFAULT_MESSAGE_TWO;
+    numErr.style.visibility = "visible";
+    inputNumber.style.border = "1px solid red";
     return false;
   }
   if (numberValue.length !== 16) {
     numErr.textContent = "Must be 16 digits";
     return false;
   }
-  numErr.textContent = "";
+  numErr.style.visibility = "hidden";
+  inputNumber.style.border = "2px solid hsla(212, 12%, 71%)";
   return true;
 }
 
@@ -201,41 +203,49 @@ function validateNumber() {
 function validateMonth() {
   const monthValue = inputMonth.value.trim();
   if (monthValue === "") {
-    monthErr.textContent = DEFAULT_MESSAGE_THREE;
+    monthErr.style.visibility = "visible";
+    inputMonth.style.border = "1px solid red";
     return false;
   }
   if (+monthValue < 1 || +monthValue > 12) {
     monthErr.textContent = "Invalid month";
     return false;
   }
-  monthErr.textContent = "";
+  monthErr.style.visibility = "hidden";
+  inputMonth.style.border = "2px solid hsla(212, 12%, 71%)";
   return true;
-
 }
 
 // VALIDATE YEAR
 function validateYear() {
   const yearValue = inputYear.value.trim();
   if (yearValue === "") {
-    yearErr.textContent = DEFAULT_MESSAGE_THREE;
+    yearErr.style.visibility = "visible";
+    inputYear.style.border = "1px solid red";
     return false;
   }
-  yearErr.textContent = "";
+  yearErr.style.visibility = "hidden";
+  inputYear.style.border = "2px solid hsla(212, 12%, 71%)";
   return true
 }
+
+
+
 
 // VALIDATE CVC
 function validateCvc() {
   const cvcValue = inputCvc.value.trim();
   if (cvcValue === "") {
-    cvcErr.textContent = DEFAULT_MESSAGE_THREE;
+    cvcErr.style.visibility = "visible";
+    inputCvc.style.border = "1px solid red";
     return false;
   }
   if (!/^\d{3}$/.test(cvcValue)) {
     cvcErr.textContent = "cvc must be 3 digits";
     return false;
   }
-  cvcErr.textContent = "";
+  cvcErr.style.visibility = "hidden";
+  inputCvc.style.border = "2px solid hsla(212, 12%, 71%)";
   return true
 }
 
@@ -250,13 +260,10 @@ function togglePage(e) {
 
 function handleSubmit(e) {
   e.preventDefault();
-
   if (!validateForm()) return;
-
-    formSection.classList.add('hidden');
-    successSection.classList.remove('hidden');
-  }
-
+  formSection.classList.add('hidden');
+  successSection.classList.remove('hidden');
+}
 
 function handleRestForm() {
   formSection.classList.remove('hidden');

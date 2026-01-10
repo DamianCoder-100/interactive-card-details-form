@@ -1,7 +1,7 @@
-* {
-    /* outline: 1px solid red; */
+/* * {
+    outline: 1px solid red;
 
-}
+} */
 
 body {
     margin: 0;
@@ -12,9 +12,6 @@ body {
 
 }
 
-.test {
-    /* background-color: rgb(49, 37, 37); */
-}
 
 main {
     margin: 0 auto;
@@ -107,18 +104,19 @@ form {
 }
 
 .error-message {
-    /* visibility: hidden; */
+    visibility: hidden;
+    min-height: 16px;
     color: hsl(0, 100%, 50%);
     font-size: 15px;
 }
 
-.error-message.show {
+/* .error-message.show {
     visibility: visible;
-}
+} */
 
-.input-error {
+/* .input-error {
     border: 1px solid hsl(0, 100%, 50%);
-}
+} */
 
 .top-label {
     display: block;
@@ -142,7 +140,7 @@ form {
     border-radius: 10px;
     font-size: 20px;
     padding-left: 15px;
-    border: 2px solid hsl(212, 12%, 71%)
+    border: 2px solid hsl(212, 12%, 71%);
 }
 
 .input-card-name {
@@ -151,7 +149,7 @@ form {
     border-radius: 10px;
     font-size: 20px;
     padding-left: 15px;
-    border: 2px solid hsl(212, 12%, 71%)
+    border: 2px solid hsl(212, 12%, 71%);
 }
 
 .ex-date-input {
@@ -160,7 +158,7 @@ form {
     border-radius: 10px;
     padding-left: 15px;
     font-size: 20px;
-    border: 2px solid hsl(212, 12%, 71%)
+    border: 2px solid hsl(212, 12%, 71%);
 }
 
 .date-input {
@@ -169,7 +167,7 @@ form {
     border-radius: 10px;
     padding-left: 15px;
     font-size: 20px;
-    border: 2px solid hsl(212, 12%, 71%)
+    border: 2px solid hsl(212, 12%, 71%);
 }
 
 .cvc-input {
@@ -178,7 +176,7 @@ form {
     border-radius: 10px;
     padding-left: 15px;
     font-size: 20px;
-    border: 2px solid hsl(212, 12%, 71%)
+    border: 2px solid hsl(212, 12%, 71%);
 }
 
 #cvc-output {
